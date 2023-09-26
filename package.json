@@ -20,6 +20,18 @@
   },
   "devDependencies": {
     "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "nodemon": "^3.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
   }
 }
